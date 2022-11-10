@@ -10,9 +10,10 @@
 body{
     background-color: var(--cream);
     font-size: 14px;
-    margin: 0;
-    width: 100%;
     min-height: 100vh;
+
+    /* margin: 0; */
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,45 +21,42 @@ body{
 }
 
 .card{
-  
-    background:url(images/image-product-desktop.jpg) no-repeat;
-    background-size: contain;
     background-color: var(--white);
-
+  
     width: 600px;
-    height: 450px;
-
+    height: 475px;
+    
     border-radius: 2%;
     display: flex;
+    
+    overflow: hidden;
     
 }
 
 .image{
+    background: url(images/image-product-desktop.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
     width: 50%;
 }
 
 .content{
-    /* display:flex;
-    flex-direction: column;
-    justify-content: center; */
-
+  
     max-width: 50%;
+    margin: 10px 0px;
     
 }
 
 .text{
-    /* display:flex;
-    flex-direction: column; */
-    margin: 30px 30px 0px;
+ 
+    margin: 0px 30px 0px;
     padding: 0px 0px;
-    /* max-height: 200px; */
 }
 
 .prices{
     display: flex;
     align-items: center;
     margin: 0px 30px 10px;
-    /* height: 100px; */
     
 }
 
@@ -92,6 +90,7 @@ body{
 
 .button:hover{
     cursor: pointer;
+    background-color: hsl(156, 48%, 17%);
 }
 
 .icon{
@@ -100,17 +99,93 @@ body{
 .b-text{
     margin: 8px ;
     font-size:12pt;
+    font-weight: 600;
 }
 
 h1{
     font-family: 'Fraunces', serif;
 }
 
+.label{
+    color: var(--dark-blue);
+    font-size: 24pt;
+    font-weight: 700;
+}
+
 .text p{
     font-family: 'Montserrat', sans-serif;
     color: var(--gray-blue);
+    line-height: 1.7;
+    font-weight: 500;
 }
 
-.label{
-    font-size: 24pt;
+
+@media (max-width:375px){
+    body{
+        background-color: var(--cream);
+        font-size: 14px;
+
+        display: flex;
+      
+    }
+    
+    .card{
+        width: auto;
+        height: 670px;
+    
+        border-radius: 2%;
+
+        display: flex;
+        flex-direction: column;
+
+        margin: 8px;
+
+        overflow: hidden;
+    }
+
+    .image{
+        background: url(images/image-product-desktop.jpg);
+        background-size:cover;
+        background-origin: content-box;
+        background-repeat: no-repeat;
+        background-position:center;
+        
+        
+        width: auto;
+        /* position: top; */
+        height: 40%;
+    }
+    
+    .content{
+      
+        background-color: white;
+        max-height: 60%;
+        max-width: 100%;
+        /* z-index: -2; */
+        
+        
+    }
+
+    .text{
+        /* width:auto; */
+        margin: 10px 25px 0px;
+        padding: 0px 0px;
+    }
+
+    .label{
+        margin: 10px 0px 0px;
+    }
+
+    .prices{
+        margin:0px 25px;
+    }
+
+    .button{
+        padding: 8px;
+        margin: 0px 25px;
+    }
+
+    .text p{
+        margin:15px 0px 0px;
+    }
 }
